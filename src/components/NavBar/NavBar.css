@@ -1,0 +1,85 @@
+.navbar {
+    padding: 1.5rem;
+    background-color: var(--white-color);
+    align-items: center;
+}
+
+#nav-logo {
+    margin-left: 4rem;
+    width: 20rem;
+    color: var(--primary-darker-color);
+    font-size: 3rem;
+}
+
+.logo-txt {
+    display: inline;
+    padding-right: 0.8rem;
+}
+
+.nav-items {
+    font-size: 1.8rem;
+    column-gap: 1rem;
+    margin-right: 5rem;
+}
+
+.github-btn {
+    padding: 1rem 2rem;
+}
+
+.github-btn-mobile {
+    display: none;
+}
+
+.navigation {
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.github-link, .toggle-modes {
+    padding: 0 2rem;
+}
+
+.toggle-modes {
+    font-size: 2.3rem;
+    color: var(--primary-darker-color);
+}
+
+/* --------------------------------------------> Responsive CSS <------------------------------- */
+@media only screen and (max-width: 600px) {
+    #nav-logo {
+        margin-left: 2rem;
+        font-size: 2rem;
+    }
+
+    .nav-items {
+        margin-right: 2rem;
+    }
+
+    .github-link, .toggle-modes {
+        padding: 0;
+        margin: 0 0.5rem;
+    }
+
+    .github-btn {
+        font-size: 1.6rem;
+    }
+
+    .github-btn {
+        padding: 1rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .github-btn {
+        display: none;
+    }
+
+    .github-btn-mobile {
+        display: block;
+        color: var(--primary-darker-color);
+    }
+
+    .github-btn-mobile, .toggle-modes {
+        font-size: 2rem;
+    }
+}

@@ -1,12 +1,16 @@
 import { Routes, Route } from "react-router-dom";
 import { MockAPI } from "./components/MockAPI/MockAPI";
 import "./styles/App.css";
+import { LandingPage } from "./pages/LandingPage";
+import { NotFound404Page } from "./pages/NotFound404Page";
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path="/" element={<LandingPage />}/>
         <Route path="/mock-api" element={ <MockAPI /> } />
+        <Route path="*" element={<NotFound404Page />}/>
       </Routes>
     </div>
   );

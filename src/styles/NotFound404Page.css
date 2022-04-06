@@ -1,0 +1,28 @@
+.page-not-found-container {
+    width: 80%;
+    padding: 6rem 2rem 4rem 2rem;
+    row-gap: 1rem;
+    margin: auto auto 5rem;
+}
+
+.page-not-found-heading {
+    font-size: 3.4rem;
+    color: var(--default-darker-color);
+}
+
+.page-not-found-img {
+    width: 35rem;
+    height: 35rem;
+}
+
+/* ------------------------------> Responsive CSS <------------------------------ */
+@media only screen and (max-width: 450px) {
+    .page-not-found-heading {
+        font-size: 2.4rem;
+    }
+
+    .page-not-found-img {
+        width: 30rem;
+        height: 30rem;
+    }
+}
