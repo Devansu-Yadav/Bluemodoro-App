@@ -3,12 +3,14 @@ import { MockAPI } from "./components/MockAPI/MockAPI";
 import "./styles/App.css";
 import { LandingPage } from "./pages/LandingPage";
 import { NotFound404Page } from "./pages/NotFound404Page";
+import { TaskPage } from "./pages/TaskPage";
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<LandingPage />}/>
+        <Route path="/tasks" element={<TaskPage />}/>
         <Route path="/mock-api" element={ <MockAPI /> } />
         <Route path="*" element={<NotFound404Page />}/>
       </Routes>

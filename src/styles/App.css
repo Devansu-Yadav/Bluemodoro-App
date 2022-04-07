@@ -1,4 +1,5 @@
 @import url("https://sapphire-ui.netlify.app/css/components.css");
+@import "./styles.css";
 @import "./colors.css";
 
 html {

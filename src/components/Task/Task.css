@@ -1,0 +1,65 @@
+.task-container {
+    padding: 3rem;
+}
+
+.task-page-welcome-heading {
+    font-size: 4.5rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.task-count-heading {
+    color: var(--content-text-color);
+}
+
+.task-page-welcome-heading, .task-count-heading {
+    margin-left: 1rem;
+}
+
+.tasks-section {
+    margin: 4rem 0;
+    color: var(--default-darker-color);
+    background-color: var(--primary-lighter-color);
+    padding: 3rem;
+}
+
+.tasks-section-heading {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.task-section-title {
+    font-size: 3.2rem;
+}
+
+.tasks-section .add-task-btn {
+    background-color: var(--default-color);
+    width: 4.8rem;
+    height: 4.8rem;
+    padding: 1.5rem;
+}
+
+/* -----------------------------------> Responsive CSS <-------------------------------- */
+@media only screen and (max-width: 450px) {
+    .task-container {
+        padding: 0;
+    }
+
+    .task-page-welcome-heading {
+        font-size: 3rem;
+    }
+
+    .task-count-heading {
+        font-size: 2.2rem;
+    }
+
+    .task-section-title {
+        font-size: 2.5rem;
+    }
+
+    .tasks-section .add-task-btn {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}

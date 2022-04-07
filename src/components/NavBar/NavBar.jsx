@@ -16,7 +16,7 @@ const NavBar = () => {
                 <ul className="nav-items centered-flex-row-container">
                     <li className="github-link">
                         <Link to="https://github.com/Devansu-Yadav/Bluemodoro-App">
-                            <button class="btn-icon github-btn btn-icon-default rounded-med space-S">
+                            <button className="btn-icon github-btn btn-icon-default rounded-med space-S">
                                 <FontAwesomeIcon icon={faGithub} />
                                 GITHUB
                             </button>
