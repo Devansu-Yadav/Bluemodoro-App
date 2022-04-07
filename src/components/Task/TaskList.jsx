@@ -18,26 +18,26 @@ const TaskList = () => {
         <ul className="task-list flex-col-container">
             { taskData.map(task => {
                 return (
-                    <Link key={task._id} to={`/pomodoro/${task._id}`}>
-                        <li className="task-item rounded-med flex-row-container">
-                            <div className="task-details flex-col-container">
+                    <li key={task._id} className="task-item rounded-med flex-row-container">
+                        <Link to={`/pomodoro/${task._id}`} className="task-details">
+                            <div className="flex-col-container">
                                 <h3 className="task-heading">{task.taskName}</h3>
                                 <p className="task-properties">Focus duration: {task.focusDuration}, Break Duration: {task.breakDuration}</p>
                             </div>
-                            <div className="task-operations centered-flex-row-container">
-                                <FontAwesomeIcon icon={faPenToSquare} className="edit-task-btn" onClick={() => { 
-                                    setModalToggle(modal => ({...modal, displayModal: true, type: "update" }));
-                                    const taskData = getTaskById(task._id);
-                                    setTaskModalData({...taskData });
-                                }} />
-                                <FontAwesomeIcon icon={faTrash} className="delete-task-btn" onClick={async() => {
-                                    taskDataDispatch({ type: DELETE_TASK, payload: task });
-                                    const deleteTaskResponse = await deleteTask(task._id);
-                                    console.log("Task Deleted - ", deleteTaskResponse);
-                                }}/>
-                            </div>
-                        </li>
-                    </Link>
+                        </Link>
+                        <div className="task-operations centered-flex-row-container">
+                            <FontAwesomeIcon icon={faPenToSquare} className="edit-task-btn" onClick={() => { 
+                                setModalToggle(modal => ({...modal, displayModal: true, type: "update" }));
+                                const taskData = getTaskById(task._id);
+                                setTaskModalData({...taskData });
+                            }} />
+                            <FontAwesomeIcon icon={faTrash} className="delete-task-btn" onClick={async() => {
+                                taskDataDispatch({ type: DELETE_TASK, payload: task });
+                                const deleteTaskResponse = await deleteTask(task._id);
+                                console.log("Task Deleted - ", deleteTaskResponse);
+                            }}/>
+                        </div>
+                    </li>
                 );
             })}
         </ul>
