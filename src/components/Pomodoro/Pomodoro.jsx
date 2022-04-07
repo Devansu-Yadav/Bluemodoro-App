@@ -42,7 +42,7 @@ const Pomodoro = ({ taskId }) => {
                                 </button>
                             </Link>
                         </div>
-                        <div className="countdown-timer">
+                        <div className="countdown-timer centered-flex-col-container">
                             <CountdownCircleTimer 
                                 key={key}
                                 isPlaying={isPlaying}
