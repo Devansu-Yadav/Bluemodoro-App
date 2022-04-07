@@ -16,6 +16,7 @@
     font-size: 2.4rem;
     word-wrap: break-word;
     margin-bottom: 2rem;
+    color: var(--default-darker-color);
 }
 
 .task-properties {

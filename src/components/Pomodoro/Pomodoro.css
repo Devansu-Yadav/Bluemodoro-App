@@ -1,0 +1,134 @@
+.task-not-found-container {
+    width: 80%;
+    padding: 6rem 2rem 4rem 2rem;
+    row-gap: 1rem;
+    margin: auto auto 5rem;
+}
+
+.task-not-found-heading {
+    font-size: 3.4rem;
+    color: var(--default-darker-color);
+}
+
+.task-not-found-img {
+    width: 35rem;
+    height: 35rem;
+}
+
+.pomodoro-task-section {
+    display: grid;
+    word-break: break-word;
+    grid-template-columns: repeat(auto-fit, minmax(365px, 1fr));
+    margin: 4rem;
+    color: var(--default-darker-color);
+    background-color: var(--primary-lighter-color);
+    padding: 3rem;
+    column-gap: 3rem;
+    row-gap: 3rem;
+}
+
+.pomodoro-task-section section {
+    background-color: var(--lynx-white);
+    border-radius: 5rem;
+}
+
+.return-to-task-page-btn {
+    padding: 1rem 2rem;
+    background-color: var(--primary-darker-color);
+    font-size: 1.6rem;
+    word-break: break-word;
+}
+
+.control-icons {
+    margin-right: 1rem;
+}
+
+.return-task-page-container {
+    display: grid;
+    word-break: break-word;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    padding: 2rem 1rem;
+}
+
+.countdown-timer {
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    padding: 2.5rem 0;
+}
+
+.timer-value {
+    color: var(--default-darker-color);
+    font-size: 6.5rem;
+}
+
+.timer-complete {
+    color: var(--default-darker-color);
+    font-size: 4rem;
+}
+
+.timer-controls {
+    display: grid;
+    word-break: break-word;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.timer-controls .timer-control-btn {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    min-height: 4rem;
+}
+
+.start-btn {
+    background-color: var(--default-darker-color);
+}
+
+.stop-btn {
+    background-color: var(--primary-darker-color);
+}
+
+.restart-btn {
+    background-color: var(--danger-darker-color);
+    grid-column: 1/ 3;
+}
+
+.task-details-container {
+    padding: 3rem;
+    height: 100%;
+    min-height: 30rem;
+}
+
+.task-description {
+    padding-top: 3rem;
+    font-size: 2rem;
+}
+
+.task-details-heading, .task-description {
+    margin-left: 1.5rem;
+}
+
+/* -------------------------------------> Responsive CSS <-------------------------------- */
+@media only screen and (max-width: 510px) {
+    .pomodoro-task-section {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        margin: 1rem;
+    }
+
+    .timer-controls {
+        padding: 1rem;
+        gap: 0;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .task-not-found-heading {
+        font-size: 2.4rem;
+    }
+
+    .task-not-found-img {
+        width: 30rem;
+        height: 30rem;
+    }
+}
