@@ -32,6 +32,10 @@
     padding: 2rem;
 }
 
+.view-pomodoro-btn {
+    color: var(--default-color);
+}
+
 .edit-task-btn {
     color: var(--primary-darker-color);
 }
@@ -40,7 +44,7 @@
     color: var(--danger-color);
 }
 
-.edit-task-btn:hover, .delete-task-btn:hover {
+.view-pomodoro-btn:hover, .edit-task-btn:hover, .delete-task-btn:hover {
     filter: brightness(75%);
 }
 

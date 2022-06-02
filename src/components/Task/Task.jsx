@@ -1,19 +1,21 @@
-import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { TaskList } from "./TaskList";
 import { TaskModal } from "../TaskModal/TaskModal";
 import { useTaskModal } from "../../common/context/TaskModalContext";
+import { useTaskData } from "../../common/context/TaskDataContext";
 import "./Task.css";
 
 const Task = () => {
     const { setModalToggle, initialTaskModalData, setTaskModalData } = useTaskModal();
+    const { taskData } = useTaskData();
 
     return (
         <main className="main-container">
             <div className="task-container space-XL flex-col-container">
                 <h1 className="heading-1 task-page-welcome-heading">Welcome back, User!</h1>
-                <h2 className="heading-2 task-count-heading">No tasks left! Great work!!</h2>
+                { taskData.length ? <h2 className="heading-2 task-count-heading">Pending Tasks left: { taskData.length }</h2> 
+                : <h2 className="heading-2 task-count-heading">No tasks left! Great work!!</h2> }
 
                 <TaskModal />
 
