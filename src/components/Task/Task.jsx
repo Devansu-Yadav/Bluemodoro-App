@@ -1,9 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { TaskList } from "./TaskList";
-import { TaskModal } from "../TaskModal/TaskModal";
-import { useTaskModal } from "../../common/context/TaskModalContext";
-import { useTaskData } from "../../common/context/TaskDataContext";
+import { TaskList, TaskModal } from "components";
+import { useTaskModal, useTaskData } from "common/context";
 import "./Task.css";
 
 const Task = () => {

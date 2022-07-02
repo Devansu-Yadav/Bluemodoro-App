@@ -1,5 +1,4 @@
 import "./LandingPageContent.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 const LandingPageContent = () => {
@@ -26,7 +25,7 @@ const LandingPageContent = () => {
           </div>
         </div>
         <div className="hero-right centered-flex-row-container">
-          <img src="/assets/images/pomodoro-hero.svg" alt="Pomodoro Hero Image" />
+          <img src="/assets/images/pomodoro-hero.svg" alt="Pomodoro Hero" />
         </div>
       </section>
     </main>

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { NavBar } from "../components/NavBar/NavBar";
-import "../styles/NotFound404Page.css";
+import { NavBar } from "components";
+import "styles/NotFound404Page.css";
 
 const NotFound404Page = () => {
     // Updating title on rendering 404 Page comp

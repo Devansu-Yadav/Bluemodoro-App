@@ -1,7 +1,6 @@
-import { useTaskModal } from "../../common/context/TaskModalContext";
-import { useTaskData } from "../../common/context/TaskDataContext";
-import { CREATE_TASK, UPDATE_TASK } from "../../common/constants";
-import { createTask, updateTask } from "../../common/helpers/TaskService";
+import { useTaskModal, useTaskData } from "common/context";
+import { CREATE_TASK, UPDATE_TASK } from "common/constants";
+import { createTask, updateTask } from "common/helpers";
 import "./TaskModal.css";
 
 const TaskModal = () => {

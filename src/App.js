@@ -1,10 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import { MockAPI } from "./components/MockAPI/MockAPI";
-import "./styles/App.css";
-import { LandingPage } from "./pages/LandingPage";
-import { NotFound404Page } from "./pages/NotFound404Page";
-import { TaskPage } from "./pages/TaskPage";
-import { PomodoroTimerPage } from "./pages/PomodoroTimerPage";
+import { MockAPI } from "components";
+import "styles/App.css";
+import { LandingPage, NotFound404Page, TaskPage, PomodoroTimerPage } from "pages";
 
 function App() {
   return (

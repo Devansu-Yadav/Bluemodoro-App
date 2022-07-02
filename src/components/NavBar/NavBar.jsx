@@ -1,6 +1,6 @@
 import "./NavBar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHourglass, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faHourglass, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 
