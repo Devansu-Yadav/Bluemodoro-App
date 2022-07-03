@@ -18,5 +18,5 @@ ReactDOM.render(
       </TaskDataProvider>
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById("root") as HTMLElement
 );

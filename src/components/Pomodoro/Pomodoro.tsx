@@ -6,13 +6,14 @@ import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import { useTaskData } from "common/context";
 import "./Pomodoro.css";
 
-const Pomodoro = ({ taskId }) => {
+const Pomodoro = ({ taskId }: { taskId: string }) => {
     const { getTaskById } = useTaskData();
     const taskData = getTaskById(taskId);
+
     const [key, setKey] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
 
-    const onTimeComplete = ({ remainingTime }) => {
+    const onTimeComplete = ({ remainingTime }: { remainingTime: number }) => {
         if(remainingTime === 0) {
             return <div className="timer-complete">Time's UP!!</div>;
         } else {
@@ -49,8 +50,8 @@ const Pomodoro = ({ taskId }) => {
                                 size={250}
                                 duration={taskData.focusDuration * 60}
                                 initialRemainingTime={taskData.focusDuration * 60}
-                                colors={['#162F5A']}
-                                onComplete={() => [false, 1000]} >
+                                colors='#162F5A'
+                                onComplete={() => ({ shouldRepeat: false, delay: 1000 })} >
                                     {onTimeComplete}
                             </CountdownCircleTimer>
                         </div>
