@@ -12,7 +12,7 @@ const TaskModal = () => {
         const createTaskResponse = await createTask(taskModalData);
         console.log("Task Created - ", createTaskResponse);
 
-        if(createTaskResponse) {
+        if(createTaskResponse && !("errorMessage" in createTaskResponse)) {
             taskDataDispatch({ type: CREATE_TASK, payload: {...taskModalData, _id: createTaskResponse[createTaskResponse.length - 1]._id }});
             setModalToggle(modal => ({...modal, displayModal: false }));
         }
@@ -22,8 +22,11 @@ const TaskModal = () => {
         event.preventDefault();
         const updateTaskResponse = await updateTask(taskModalData);
         console.log("Task Updated - ", updateTaskResponse);
-        taskDataDispatch({ type: UPDATE_TASK, payload: taskModalData });
-        setModalToggle(modal => ({...modal, displayModal: false }));
+
+        if(updateTaskResponse && !("errorMessage" in updateTaskResponse)) {
+            taskDataDispatch({ type: UPDATE_TASK, payload: taskModalData });
+            setModalToggle(modal => ({...modal, displayModal: false }));
+        }
     }
 
     return (
