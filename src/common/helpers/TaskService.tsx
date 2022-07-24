@@ -10,7 +10,7 @@ const getErrorMessage = (error: unknown): string => {
     return String(error);
 }
 
-const getTaskData = async (): Promise<Task[] | undefined> => {
+const getTaskData = async (): Promise<Task[] | { errorMessage: string } | undefined> => {
     try {
         const response = await axios.get("/api/tasks");
         if(response.status === 200) {
@@ -18,10 +18,11 @@ const getTaskData = async (): Promise<Task[] | undefined> => {
         }
     } catch(err) {
         console.log("getTaskData: Error in fetching Tasks", getErrorMessage(err));
+        return { errorMessage: getErrorMessage(err) };
     }
 }
 
-const createTask = async (task: Task): Promise<Task[] | undefined> => {
+const createTask = async (task: Task): Promise<Task[] | { errorMessage: string } | undefined> => {
     try {
         const response = await axios.post("/api/tasks", task);
         if(response.status === 201) {
@@ -29,10 +30,11 @@ const createTask = async (task: Task): Promise<Task[] | undefined> => {
         } 
     } catch (error) {
         console.log("createTask : Error in creating Task", getErrorMessage(error));
+        return { errorMessage: getErrorMessage(error) };
     }
 }
 
-const deleteTask = async (taskId: string): Promise<Task[] | undefined> => {
+const deleteTask = async (taskId: string): Promise<Task[] | { errorMessage: string } | undefined> => {
     try {
         const response = await axios.delete(`/api/tasks/${taskId}`);
         if(response.status === 200) {
@@ -40,10 +42,11 @@ const deleteTask = async (taskId: string): Promise<Task[] | undefined> => {
         }
     } catch(error) {
         console.log("deleteTask : Error in deleting task", getErrorMessage(error));
+        return { errorMessage: getErrorMessage(error) };
     }
 }
 
-const updateTask = async (task: Task): Promise<Task[] | undefined> => {
+const updateTask = async (task: Task): Promise<Task[] | { errorMessage: string } | undefined> => {
     try {
         const response = await axios.post(`/api/tasks/${task._id}`, task);
         if(response.status === 201) {
@@ -51,6 +54,7 @@ const updateTask = async (task: Task): Promise<Task[] | undefined> => {
         }
     } catch(error) {
         console.log("updateTask : Error in updating task", getErrorMessage(error));
+        return { errorMessage: getErrorMessage(error) };
     }
 }
 

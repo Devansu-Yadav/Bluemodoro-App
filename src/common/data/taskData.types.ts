@@ -20,4 +20,6 @@ export type TaskAction = {
 } | {
     type: "UPDATE_TASK",
     payload: Task
+} | {
+    type: "DEFAULT"
 }
