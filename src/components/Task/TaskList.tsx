@@ -33,7 +33,10 @@ const TaskList = () => {
                             <FontAwesomeIcon icon={faPenToSquare} className="edit-task-btn" onClick={() => { 
                                 setModalToggle(modal => ({...modal, displayModal: true, type: "update" }));
                                 const taskData = getTaskById(task._id);
-                                setTaskModalData({...taskData });
+
+                                if(taskData) {
+                                    setTaskModalData({...taskData });
+                                }
                             }} />
                             <FontAwesomeIcon icon={faTrash} className="delete-task-btn" onClick={async() => {
                                 taskDataDispatch({ type: DELETE_TASK, payload: task });

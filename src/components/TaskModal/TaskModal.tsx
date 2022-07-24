@@ -7,15 +7,18 @@ const TaskModal = () => {
     const { modalToggle, setModalToggle, taskModalData, setTaskModalData } = useTaskModal();
     const { taskDataDispatch } = useTaskData();
 
-    const onSubmitAddTaskHandler = async (event) => {
+    const onSubmitAddTaskHandler = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const createTaskResponse = await createTask(taskModalData);
         console.log("Task Created - ", createTaskResponse);
-        taskDataDispatch({ type: CREATE_TASK, payload: {...taskModalData, _id: createTaskResponse[createTaskResponse.length - 1]._id }});
-        setModalToggle(modal => ({...modal, displayModal: false }));
+
+        if(createTaskResponse) {
+            taskDataDispatch({ type: CREATE_TASK, payload: {...taskModalData, _id: createTaskResponse[createTaskResponse.length - 1]._id }});
+            setModalToggle(modal => ({...modal, displayModal: false }));
+        }
     }
 
-    const onSubmitUpdateTaskHandler = async (event) => {
+    const onSubmitUpdateTaskHandler = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const updateTaskResponse = await updateTask(taskModalData);
         console.log("Task Updated - ", updateTaskResponse);
@@ -46,7 +49,7 @@ const TaskModal = () => {
 
                     <div className='form-item'>
                         <label className="form-input-label" htmlFor="task-description">Task Description *</label>
-                        <textarea id="task-description" className='form-text-area input-primary' value={taskModalData.taskDescription} name='taskDescription' rows="3" placeholder='Add Description' 
+                        <textarea id="task-description" className='form-text-area input-primary' value={taskModalData.taskDescription} name='taskDescription' rows={3} placeholder='Add Description' 
                         onChange={(event) => {
                             setTaskModalData(taskItem => ({...taskItem, taskDescription: event.target.value}));
                         }} required />

@@ -9,12 +9,12 @@ const PomodoroTimerPage = () => {
         document.title = "Bluemodoro - Pomodoro Timer";
     }, []);
 
-    const taskId = useParams();
+    const { taskId } = useParams();
 
     return (
         <div>
             <NavBar />
-            <Pomodoro taskId={taskId.taskId}/>
+            <Pomodoro taskId={taskId ?? "" } />
         </div>
     );
 }
