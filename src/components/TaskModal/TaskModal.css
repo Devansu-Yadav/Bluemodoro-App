@@ -122,6 +122,6 @@
     }
 
     .display-modal {
-        transform: translate(-50%, -7%)  scale(0.88);
+        transform: translate(-50%, 5%)  scale(0.88);
     }
 }

@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faPlay, faPause, faArrowRotateRight } from "@fortawesome/free-solid-svg-icons";
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
-import { useTaskData } from "../../common/context/TaskDataContext";
+import { useTaskData } from "common/context";
 import "./Pomodoro.css";
 
 const Pomodoro = ({ taskId }) => {

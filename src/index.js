@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
-import { TaskDataProvider } from "./common/context/TaskDataContext";
-import { TaskModalToggle } from "./common/context/TaskModalContext";
+import { TaskDataProvider, TaskModalToggle } from "common/context";
 
 // Call make Server
 makeServer();

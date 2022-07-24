@@ -4,8 +4,8 @@ import {
     CREATE_TASK,
     DELETE_TASK,
     UPDATE_TASK
-} from "../constants";
-import { getTaskData } from "../helpers/TaskService";
+} from "common/constants";
+import { getTaskData } from "common/helpers";
 
 const TaskDataContext = createContext({ taskData: [], taskDataDispatch: () => {}, getTaskById: () => {}});
 
